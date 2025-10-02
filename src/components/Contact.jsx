@@ -99,7 +99,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Vamos conversar</h3>
+              <h3 className="text-2xl font-bold mb-6">Fale comigo</h3>
               <p className="text-[#98a6b3] mb-8">
                 Estou sempre aberto a discutir novos projetos, ideias criativas
                 ou oportunidades para fazer parte de sua visão.

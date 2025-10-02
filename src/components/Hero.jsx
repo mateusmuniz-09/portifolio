@@ -33,7 +33,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Desenvolvedor Web Júnior
           </p>
-          <p className="text-lg text-[#98a6b3] max-w-2xl mx-auto  italic mb-8">
+          <p className="text-sm text-[#98a6b3] max-w-2xl mx-auto  italic mb-8">
             Transformo ideias em experiências web modernas e funcionais, com
             código limpo e eficiente.
           </p>

@@ -2,14 +2,14 @@ const About = () => {
   return (
     <section id="about" className="bg-[#181a1f] scroll-mt-nav mb-8 py-8">
       <div className="container mx-auto p-4">
-        <div className="max-w-3xl mx-auto text-center p-8 ">
+        <div className="max-w-3xl mx-auto text-center p-2 ">
           <h1 className="mb-8 md:text-5xl text-3xl flex gap-2 justify-center items-center">
             <span>Quem sou</span>
             <span className="bg-gradient-to-r from-cyan-700 via-cyan-600 to-cyan-500 bg-clip-text text-transparent text-nowrap font-bold">
               eu
             </span>
           </h1>
-          <div className="space-y-6 text-lg text-[#98a6b3] animate-slide-up">
+          <div className="space-y-6 text-md md:text-lg text-[#98a6b3] animate-slide-up">
             <p>
               Sou um{" "}
               <strong className="text-cyan-500 italic font-medium">
