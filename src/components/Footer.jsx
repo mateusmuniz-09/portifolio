@@ -14,8 +14,8 @@ const Footer = () => {
               Mateus Muniz
             </h3>
             <p className="text-[#98a6b3]">
-              Programador Fullstack Júnior dedicado a criar soluções web
-              modernas e eficientes.
+              Desenvolvedor Web Júnior dedicado a criar soluções web modernas e
+              eficientes.
             </p>
           </div>
 
@@ -116,11 +116,11 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-[#2d3139] pt-8 text-center text-[#98a6b3]">
-          <p>
+          <p className="text-xs">
             &copy; {currentYear} Mateus Muniz. Todos os direitos reservados.
           </p>
-          <p className="mt-2 text-sm">
-            Desenvolvido com React, TypeScript e Tailwind CSS
+          <p className="mt-2 text-[8px]">
+            Desenvolvido com React, JavaScript e Tailwind CSS
           </p>
         </div>
       </div>
