@@ -52,7 +52,6 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
   };
 
   const handleSubmit = async (e) => {
@@ -63,19 +62,21 @@ const Contact = () => {
       return;
     }
 
-    // Simular envio - aqui você pode integrar com EmailJS, Netlify Forms ou sua API
-    try {
-      // Placeholder para integração futura
-      sendRequest(formData);
+    setIsSubmitting(true);
 
-      toast.success("Mensagem enviada! Obrigado pelo contato.");
+    setTimeout(() => {
+      try {
+        sendRequest(formData);
 
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      toast.error("Ocorreu um erro. Tente novamente mais tarde.", error);
-    } finally {
-      setIsSubmitting(false);
-    }
+        toast.success("Mensagem enviada! Obrigado pelo contato.");
+
+        setFormData({ name: "", email: "", message: "" });
+      } catch (error) {
+        toast.error("Ocorreu um erro. Tente novamente mais tarde.", error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    }, 2000);
   };
 
   return (
@@ -98,7 +99,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Fale comigo</h3>
+              <h3 className="text-2xl font-bold mb-6">Vamos conversar</h3>
               <p className="text-[#98a6b3] mb-8">
                 Estou sempre aberto a discutir novos projetos, ideias criativas
                 ou oportunidades para fazer parte de sua visão.
