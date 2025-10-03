@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
+import sendRequest from "../services/sendRequest";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -62,12 +63,10 @@ const Contact = () => {
       return;
     }
 
-    setIsSubmitting(true);
-
     // Simular envio - aqui você pode integrar com EmailJS, Netlify Forms ou sua API
     try {
       // Placeholder para integração futura
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      sendRequest(formData);
 
       toast.success("Mensagem enviada! Obrigado pelo contato.");
 
