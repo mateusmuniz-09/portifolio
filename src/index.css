@@ -10,13 +10,48 @@ body {
   color: #f5f5f5;
   font-family: "Poppins", sans-serif;
 }
+.active{
+  background-color: #00b7db71;
+ 
+}
 
 
 
 @keyframes fade-in {
   0% {
     opacity: 0; 
-    transform: translateY(10px); 
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0; 
+    transform: translateX(-20px); 
+  }
+  100% {
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+@keyframes fade-rigth {
+  0% {
+    opacity: 0; 
+    transform: translateX(20px); 
+  }
+  100% {
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+@keyframes fade-down {
+  0% {
+    opacity: 0; 
+    transform: translateY(-20px); 
   }
   100% {
     opacity: 1; 
@@ -44,6 +79,15 @@ body {
 
 .fade-in {
   animation: fade-in 0.7s ease-out forwards; 
+}
+.fade-left {
+  animation: fade-left 0.7s ease-out forwards; 
+}
+.fade-rigth {
+  animation: fade-rigth 0.7s ease-out forwards; 
+}
+.fade-down {
+  animation: fade-down 0.7s ease-out forwards; 
 }
 
 .avancado{

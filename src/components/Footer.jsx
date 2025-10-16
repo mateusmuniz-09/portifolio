@@ -1,5 +1,7 @@
 import { Github, Linkedin, Mail, FileText, Download } from "lucide-react";
+
 import { FaWhatsapp } from "react-icons/fa";
+import ScrollToTopLink from "./ScrollToTopLink";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,36 +26,36 @@ const Footer = () => {
             <h4 className="text-md font-semibold mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#about"
+                <ScrollToTopLink
+                  to="/"
+                  className="text-[#98a6b3] hover:text-cyan-500 transition-colors"
+                >
+                  Inicio
+                </ScrollToTopLink>
+              </li>
+              <li>
+                <ScrollToTopLink
+                  to="/about"
                   className="text-[#98a6b3] hover:text-cyan-500 transition-colors"
                 >
                   Sobre
-                </a>
+                </ScrollToTopLink>
               </li>
               <li>
-                <a
-                  href="#skills"
+                <ScrollToTopLink
+                  to="/skills"
                   className="text-[#98a6b3] hover:text-cyan-500 transition-colors"
                 >
                   Especialidades
-                </a>
+                </ScrollToTopLink>
               </li>
               <li>
-                <a
-                  href="#projects"
+                <ScrollToTopLink
+                  to="/projects"
                   className="text-[#98a6b3] hover:text-cyan-500 transition-colors"
                 >
                   Projetos
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-[#98a6b3] hover:text-cyan-500 transition-colors"
-                >
-                  Contato
-                </a>
+                </ScrollToTopLink>
               </li>
             </ul>
           </div>

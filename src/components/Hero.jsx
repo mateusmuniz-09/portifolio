@@ -1,6 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import fotoPErfil from "../assets/img/perfil.png";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const handleContactClick = () => {
@@ -50,9 +51,12 @@ const Hero = () => {
               size={25}
             />
           </button>
-          <button className="border border-gray-600 hover:bg-cyan-500 hover:text-[#1a1d23] px-6 py-4 text-lg rounded-xl trasition-all duration-300">
-            <a href="#projects">Ver Projetos</a>
-          </button>
+          <Link
+            to="/projects"
+            className="border border-gray-600 hover:bg-cyan-500 hover:text-[#1a1d23] px-6 py-4 text-lg rounded-xl trasition-all duration-300"
+          >
+            Ver Projetos
+          </Link>
         </div>
 
         {/* Social Links */}

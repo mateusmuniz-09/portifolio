@@ -7,7 +7,7 @@ import {
   Terminal,
 } from "lucide-react";
 
-const Skills = () => {
+const SkillsPage = () => {
   const skills = [
     {
       category: "Frontend",
@@ -63,7 +63,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="scroll-mt-nav py-8 fade-down">
+    <section id="skills" className="scroll-mt-nav py-8 mt-15 fade-down">
       <div className="container mx-auto p-4">
         <div className="text-center mb-16">
           <h1 className="mb-8 md:text-5xl text-3xl flex gap-2 justify-center items-center">
@@ -130,4 +130,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillsPage;

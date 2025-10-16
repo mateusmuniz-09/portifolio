@@ -1,10 +1,7 @@
-const About = () => {
+const AboutPage = () => {
   return (
-    <section
-      id="about"
-      className="bg-[#181a1f] scroll-mt-nav mb-8 py-8 fade-in"
-    >
-      <div className="container mx-auto p-4 ">
+    <div id="about" className=" scroll-mt-nav mb-8 mt-15 py-8 fade-left">
+      <div className="container mx-auto p-4">
         <div className="max-w-3xl mx-auto text-center p-2 ">
           <h1 className="mb-8 md:text-5xl text-3xl flex gap-2 justify-center items-center">
             <span>Quem sou</span>
@@ -49,8 +46,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default About;
+export default AboutPage;

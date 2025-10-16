@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import {
   Menu,
   X,
@@ -15,11 +16,10 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const menuItems = [
-    { name: "Início", href: "#hero", icon: Home },
-    { name: "Sobre", href: "#about", icon: User },
-    { name: "Especialidades", href: "#skills", icon: Code },
-    { name: "Projetos", href: "#projects", icon: Folder },
-    { name: "Contato", href: "#contact", icon: Mail },
+    { name: "Início", to: "/", icon: Home },
+    { name: "Sobre", to: "/about", icon: User },
+    { name: "Especialidades", to: "/skills", icon: Code },
+    { name: "Projetos", to: "/projects", icon: Folder },
   ];
   useEffect(() => {
     const handleScroll = () => {
@@ -29,13 +29,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    setIsOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth", // rolagem suave
+    });
   };
 
   return (
@@ -48,11 +47,10 @@ const Navbar = () => {
     >
       <div className="mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}{" "}
           <a
             href="#hero"
             className="relative p-2 rounded-2xl bg-slate-900 flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300 border-2 border-cyan-400"
-            onClick={(e) => handleNavClick(e, "#hero")}
+            onClick={handleClick}
           >
             <span
               className="text-xl font-black text-cyan-400"
@@ -66,15 +64,17 @@ const Navbar = () => {
             {menuItems.map((item) => {
               const Icon = item.icon;
               return (
-                <a
+                <NavLink
+                  to={item.to}
                   key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className=" hover:scale-105 transition-all duration-200 flex gap-2 items-center justify-center"
+                  onClick={() => {
+                    handleClick();
+                  }}
+                  className=" hover:scale-105 transition-all duration-200 flex gap-2 items-center justify-center p-2 rounded-md "
                 >
                   <Icon className="text-cyan-500" size={18} />{" "}
                   <span>{item.name}</span>
-                </a>
+                </NavLink>
               );
             })}
           </div>
@@ -107,22 +107,25 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className=" float-end mx-5 text-cyan-500 bg-cyan-500/20 rounded-md"
           />
-          <div className="flex flex-col space-y-4 w-full p-4 mt-2">
+          <div className="flex flex-col space-y-4 w-full py-4 mt-2">
             {menuItems.map((item) => {
               const Icon = item.icon;
               return (
-                <a
+                <NavLink
+                  to={item.to}
+                  onClick={() => {
+                    setIsOpen(false);
+                    handleClick();
+                  }}
                   key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-foreground hover:text-primary transition-colors duration-300 py-2 flex items-center justify-between"
+                  className="text-foreground hover:text-primary transition-colors duration-300 py-2 flex items-center justify-between p-2 "
                 >
                   <div className="flex gap-2 justify-start items-center">
                     <Icon size={18} className="text-cyan-500" />{" "}
                     <span>{item.name}</span>
                   </div>
                   <ChevronRight className="text-cyan-500" />
-                </a>
+                </NavLink>
               );
             })}
           </div>
